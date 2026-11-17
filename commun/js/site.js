@@ -40,8 +40,33 @@
     var form = bloc.querySelector("[data-recherche]");
     var message = bloc.querySelector("[data-message]");
     var lienContact = bloc.getAttribute("data-contact") || "contact.html";
+    var bulle = bloc.querySelector("[data-bulle]");
+    var actif = null;
+
+    function bulleMontrer(n, commune) {
+      if (!bulle) return;
+      var s = SECTIONS.filter(function (x) { return x.n === n; })[0];
+      if (!s) return;
+      var titre = commune || (s.communes.length === 1 ? s.communes[0] : s.nom);
+      var sous = (commune && commune !== s.nom) || s.communes.length > 1 ? "Section " + s.nom : "Section n° " + s.n;
+      if (!commune && s.communes.length > 1) sous = s.communes.join(", ");
+      bulle.querySelector("[data-b-titre]").textContent = titre;
+      bulle.querySelector("[data-b-sous]").textContent = sous;
+      bulle.style.top = s.y + "%";
+      bulle.hidden = false;
+      var largeur = bulle.parentElement.clientWidth;
+      var demi = bulle.offsetWidth / 2;
+      var cx = s.x / 100 * largeur;
+      bulle.style.left = Math.min(Math.max(cx, demi), largeur - demi) + "px";
+    }
+    function bulleMasquer() {
+      if (!bulle) return;
+      if (actif) bulleMontrer(actif); else bulle.hidden = true;
+    }
 
     function marquer(n) {
+      actif = n;
+      if (n) bulleMontrer(n); else if (bulle) bulle.hidden = true;
       Array.prototype.forEach.call(svg.querySelectorAll("g[data-s]"), function (g) {
         g.classList.toggle("est-actif", Number(g.getAttribute("data-s")) === n);
       });
@@ -88,11 +113,12 @@
     var retour = bloc.querySelector("[data-f-retour]");
     if (retour) retour.addEventListener("click", revenir);
 
-    function survoler(n, on) {
+    function survoler(n, on, commune) {
       var g = svg.querySelector('g[data-s="' + n + '"]');
       if (g) g.classList.toggle("est-survole", on);
       var b = pins && pins.querySelector('button[data-s="' + n + '"]');
       if (b) b.classList.toggle("est-survole", on);
+      if (on) bulleMontrer(n, commune); else bulleMasquer();
     }
 
     if (pins) {
@@ -117,7 +143,9 @@
     Array.prototype.forEach.call(svg.querySelectorAll("g[data-s]"), function (g) {
       var n = Number(g.getAttribute("data-s"));
       g.addEventListener("click", function () { choisir(n, true); });
-      g.addEventListener("mouseenter", function () { survoler(n, true); });
+      Array.prototype.forEach.call(g.querySelectorAll("path"), function (p) {
+        p.addEventListener("mouseenter", function () { survoler(n, true, p.getAttribute("data-commune")); });
+      });
       g.addEventListener("mouseleave", function () { survoler(n, false); });
     });
     if (form) {

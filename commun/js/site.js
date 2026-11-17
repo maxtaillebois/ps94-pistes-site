@@ -67,6 +67,13 @@
     }
     bloc.choisir = choisir;
 
+    function survoler(n, on) {
+      var g = svg.querySelector('g[data-s="' + n + '"]');
+      if (g) g.classList.toggle("est-survole", on);
+      var b = pins && pins.querySelector('button[data-s="' + n + '"]');
+      if (b) b.classList.toggle("est-survole", on);
+    }
+
     if (pins) {
       SECTIONS.forEach(function (s) {
         var b = document.createElement("button");
@@ -79,11 +86,18 @@
         b.setAttribute("aria-label", "Section " + s.nom);
         b.setAttribute("aria-pressed", "false");
         b.addEventListener("click", function () { choisir(s.n); });
+        b.addEventListener("mouseenter", function () { survoler(s.n, true); });
+        b.addEventListener("mouseleave", function () { survoler(s.n, false); });
+        b.addEventListener("focus", function () { survoler(s.n, true); });
+        b.addEventListener("blur", function () { survoler(s.n, false); });
         pins.appendChild(b);
       });
     }
     Array.prototype.forEach.call(svg.querySelectorAll("g[data-s]"), function (g) {
-      g.addEventListener("click", function () { choisir(Number(g.getAttribute("data-s"))); });
+      var n = Number(g.getAttribute("data-s"));
+      g.addEventListener("click", function () { choisir(n); });
+      g.addEventListener("mouseenter", function () { survoler(n, true); });
+      g.addEventListener("mouseleave", function () { survoler(n, false); });
     });
     if (form) {
       form.addEventListener("submit", function (e) {

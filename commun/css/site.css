@@ -4,7 +4,7 @@
   --rose-pale:#FFF5F8;--rose-pale-2:#FFEEF4;--rose-filet:#F2D5E0;--rose-doux:#FFD9E7;--rose-doux-2:#FFC2D8;
   --encre:#1A1A1A;--gris:#4A4447;--gris-2:#6B6467;--gris-clair:#EDE7EA;--bordeaux:#2A0012;--pourpre:#8B0A50;
   --largeur:1280px;--gouttiere:40px;
-  --carte-fond:#FFD9E7;--carte-fond-2:#FFC2D8;--carte-trait:#FFFFFF;--carte-survol:#FF8FB6;--carte-actif:#F70059;
+  --carte-fond:#FFCCDD;--carte-trait:#FFFFFF;--carte-trait-fin:rgba(255,255,255,.55);--carte-survol:#FF8FB6;--carte-actif:#F70059;
   --pin-fond:#FFFFFF;--pin-texte:#D6004C;--pin-actif-fond:#1A1A1A;--pin-actif-texte:#FFFFFF;
 }
 *{box-sizing:border-box}
@@ -117,8 +117,8 @@ body.avec-presentation .entete{top:44px}
 .carte__plan{position:relative}
 .carte__plan svg{display:block;width:100%;height:auto}
 .carte__plan g[data-s]{cursor:pointer}
-.carte__plan path{fill:var(--carte-fond);stroke:var(--carte-trait);stroke-width:1.6;stroke-linejoin:round;transition:fill .15s}
-.carte__plan g.pair path{fill:var(--carte-fond-2)}
+.carte__plan g[data-s] path{fill:var(--carte-fond);stroke:var(--carte-trait-fin);stroke-width:.8;stroke-linejoin:round;transition:fill .15s}
+.carte__contours{fill:none;stroke:var(--carte-trait);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;pointer-events:none}
 .carte__plan g[data-s]:hover path{fill:var(--carte-survol)}
 .carte__plan g.est-actif path,.carte__plan g.est-actif:hover path{fill:var(--carte-actif)}
 .carte__pin{position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;border:0;padding:0;background:var(--pin-fond);color:var(--pin-texte);font:800 11px/24px "Barlow",sans-serif;text-align:center;box-shadow:0 2px 6px rgba(90,0,30,.28);cursor:pointer}
@@ -221,7 +221,7 @@ body.avec-presentation .entete{top:44px}
 .hero-a4__photo{flex:1 1 460px;min-height:440px;border-radius:6px;box-shadow:0 24px 60px rgba(90,0,30,.35);background:url(../img/photo-hero.jpg) center 30%/cover}
 
 /* ===== Thèmes ===== */
-.piste-a4{--carte-fond:#FFFFFF;--carte-fond-2:#FFE6EF;--carte-trait:#F70059;--carte-survol:#8B0A50;--carte-actif:#8B0A50;--pin-fond:#E00050;--pin-texte:#FFFFFF;--pin-actif-fond:#FFFFFF;--pin-actif-texte:#8B0A50}
+.piste-a4{--carte-fond:#FFFFFF;--carte-trait:#F70059;--carte-trait-fin:#FBC6D8;--carte-survol:#8B0A50;--carte-actif:#8B0A50;--pin-fond:#E00050;--pin-texte:#FFFFFF;--pin-actif-fond:#FFFFFF;--pin-actif-texte:#8B0A50}
 .piste-a4 .pied{background:var(--rose-profond);color:#fff}
 .piste-a4 .pied a{color:#fff}
 .piste-a4 .pied__bas{color:#fff}

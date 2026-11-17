@@ -41,9 +41,7 @@
     var message = bloc.querySelector("[data-message]");
     var lienContact = bloc.getAttribute("data-contact") || "contact.html";
 
-    function choisir(n) {
-      var s = SECTIONS.filter(function (x) { return x.n === n; })[0];
-      if (!s) return;
+    function marquer(n) {
       Array.prototype.forEach.call(svg.querySelectorAll("g[data-s]"), function (g) {
         g.classList.toggle("est-actif", Number(g.getAttribute("data-s")) === n);
       });
@@ -54,9 +52,26 @@
           b.setAttribute("aria-pressed", String(on));
         });
       }
+    }
+
+    function revenir() {
+      marquer(null);
+      if (fiche) fiche.hidden = true;
+      if (form) {
+        form.hidden = false;
+        var champ = form.querySelector("input");
+        champ.value = "";
+        champ.focus();
+      }
+    }
+
+    function choisir(n, depuisCarte) {
+      var s = SECTIONS.filter(function (x) { return x.n === n; })[0];
+      if (!s) return;
+      marquer(n);
+      if (form) form.hidden = true;
       if (fiche) {
-        fiche.querySelector("[data-f-vide]").hidden = true;
-        fiche.querySelector("[data-f-contenu]").hidden = false;
+        fiche.hidden = false;
         fiche.querySelector("[data-f-num]").textContent = "Section n° " + s.n;
         fiche.querySelector("[data-f-nom]").textContent = s.nom;
         fiche.querySelector("[data-f-communes]").textContent = s.communes.length > 1 ? "Communes : " + s.communes.join(", ") : "Commune : " + s.communes[0];
@@ -64,8 +79,14 @@
         fiche.querySelector("[data-f-lien]").setAttribute("href", lienContact + "?objet=section&section=" + s.n);
       }
       if (message) message.textContent = "";
+      if (depuisCarte && fiche) {
+        var r = fiche.getBoundingClientRect();
+        if (r.top < 0 || r.bottom > window.innerHeight) fiche.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     }
     bloc.choisir = choisir;
+    var retour = bloc.querySelector("[data-f-retour]");
+    if (retour) retour.addEventListener("click", revenir);
 
     function survoler(n, on) {
       var g = svg.querySelector('g[data-s="' + n + '"]');
@@ -85,7 +106,7 @@
         b.setAttribute("data-s", s.n);
         b.setAttribute("aria-label", "Section " + s.nom);
         b.setAttribute("aria-pressed", "false");
-        b.addEventListener("click", function () { choisir(s.n); });
+        b.addEventListener("click", function () { choisir(s.n, true); });
         b.addEventListener("mouseenter", function () { survoler(s.n, true); });
         b.addEventListener("mouseleave", function () { survoler(s.n, false); });
         b.addEventListener("focus", function () { survoler(s.n, true); });
@@ -95,7 +116,7 @@
     }
     Array.prototype.forEach.call(svg.querySelectorAll("g[data-s]"), function (g) {
       var n = Number(g.getAttribute("data-s"));
-      g.addEventListener("click", function () { choisir(n); });
+      g.addEventListener("click", function () { choisir(n, true); });
       g.addEventListener("mouseenter", function () { survoler(n, true); });
       g.addEventListener("mouseleave", function () { survoler(n, false); });
     });

@@ -141,6 +141,9 @@ body.avec-presentation .entete{top:44px}
 .fiche__vide{margin:0!important;color:var(--gris)!important}
 .fiche__communes{color:var(--gris)!important;font-size:15px}
 .fiche .btn{margin-top:12px}
+.fiche__retour{display:block;margin-top:16px;padding:6px 0;border:0;background:none;font:600 15px "Barlow",sans-serif;color:var(--gris);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.fiche__retour:hover{color:var(--rose-texte)}
+.fiche[hidden],.recherche[hidden]{display:none}
 
 /* Liste des sections */
 .liste-sections{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 36px;margin:0;padding:0;list-style:none}

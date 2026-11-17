@@ -197,6 +197,7 @@ body.avec-presentation .entete{top:44px}
 .champ input,.champ select,.champ textarea{width:100%;min-width:0;font:inherit;padding:13px 14px;border:2px solid #E5C9D4;border-radius:4px;background:#fff;color:var(--encre)}
 .champ input:focus,.champ select:focus,.champ textarea:focus{outline:none;border-color:var(--rose)}
 .champ textarea{resize:vertical;min-height:150px}
+.champ select{-webkit-appearance:none;appearance:none;padding-right:48px;cursor:pointer;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1.5l6 6 6-6' fill='none' stroke='%23D6004C' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 18px center}
 .rgpd{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--gris)}
 .rgpd input{width:20px;height:20px;margin-top:3px;accent-color:var(--rose-bouton);flex-shrink:0}
 .formulaire__envoi{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:16px;align-items:center}

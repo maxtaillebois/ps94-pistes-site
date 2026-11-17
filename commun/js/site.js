@@ -55,6 +55,8 @@
         });
       }
       if (fiche) {
+        fiche.querySelector("[data-f-vide]").hidden = true;
+        fiche.querySelector("[data-f-contenu]").hidden = false;
         fiche.querySelector("[data-f-num]").textContent = "Section n° " + s.n;
         fiche.querySelector("[data-f-nom]").textContent = s.nom;
         fiche.querySelector("[data-f-communes]").textContent = s.communes.length > 1 ? "Communes : " + s.communes.join(", ") : "Commune : " + s.communes[0];
@@ -106,7 +108,7 @@
         if (trouve) choisir(trouve.n);
       });
     });
-    choisir(Number(bloc.getAttribute("data-depart") || 31));
+    if (bloc.getAttribute("data-depart")) choisir(Number(bloc.getAttribute("data-depart")));
   });
 
   /* Liste des sections : sélectionne sur la carte */

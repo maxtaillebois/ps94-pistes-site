@@ -70,6 +70,7 @@ body.avec-presentation .entete{top:44px}
 /* Accueil piste A : photo sous voile rose */
 .hero-a{background-image:linear-gradient(90deg,rgba(247,0,89,.94) 0%,rgba(247,0,89,.82) 38%,rgba(247,0,89,.15) 72%,rgba(247,0,89,0) 100%),url(../img/photo-hero.jpg);background-size:cover;background-position:center 30%;min-height:600px;display:flex;align-items:center;color:#fff}
 .hero-a .conteneur{width:100%;padding-top:80px;padding-bottom:150px}
+.hero-a__photo-mobile{display:none}
 .hero__texte{max-width:620px}
 .hero__avant{margin:0 0 6px;font-family:"Arvo",Georgia,serif;font-size:30px}
 .hero__titre{font-family:"Arvo",Georgia,serif;font-weight:700;font-size:64px;line-height:1.05}
@@ -179,7 +180,7 @@ body.avec-presentation .entete{top:44px}
 .page-entete{padding:72px 0 64px}
 .page-entete h1{font-family:"Arvo",Georgia,serif;font-weight:700;font-size:56px;line-height:1.05;margin-bottom:16px}
 .page-entete p{margin:0;max-width:720px;font-size:20px}
-.page-entete--photo{background-image:linear-gradient(90deg,rgba(247,0,89,.95) 0%,rgba(247,0,89,.85) 50%,rgba(247,0,89,.35) 100%),url(../img/photo-groupe.jpg);background-size:cover;background-position:center 35%;color:#fff;padding-bottom:80px}
+.page-entete--photo{background-image:linear-gradient(90deg,rgba(247,0,89,.95) 0%,rgba(247,0,89,.85) 50%,rgba(247,0,89,.35) 100%),url(../img/photo-groupe.jpg);background-size:cover;background-position:center 12%;color:#fff;padding-bottom:80px}
 .page-entete--photo p{font-weight:500}
 .page-entete--pale{background:var(--rose-pale)}
 .page-entete--rose{background:var(--rose);color:#fff;position:relative;overflow:hidden}
@@ -204,9 +205,8 @@ body.avec-presentation .entete{top:44px}
 .hero-a3{background:var(--rose-pale);padding:64px 0 72px;position:relative;overflow:hidden}
 .hero-a3 h1{font-family:"Arvo",Georgia,serif;font-weight:700;font-size:56px;line-height:1.06;margin:0 0 18px}
 .hero-a3 .hero__chapo{color:var(--encre);font-size:19px;margin:0 0 28px}
-.bandeau-photo{min-height:440px;display:flex;align-items:flex-end;padding-bottom:48px;background-size:cover;background-position:center 35%}
+.bandeau-photo{height:clamp(320px,42vw,660px);background-size:cover;background-position:center 4%}
 .bandeau-photo--groupe{background-image:url(../img/photo-groupe.jpg)}
-.bandeau-photo p{margin:0;max-width:560px;background:#fff;padding:26px 30px;border:2px solid var(--rose);border-radius:6px;font-family:"Arvo",Georgia,serif;font-size:22px;line-height:1.4}
 .depliants{border-top:2px solid var(--encre)}
 .depliants details{border-bottom:1px solid #E8DDE1}
 .depliants summary{list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;cursor:pointer;font-size:20px;font-weight:700}
@@ -260,8 +260,9 @@ body.avec-presentation .entete{top:44px}
   .entete__nav a[aria-current="page"]{border-bottom-color:var(--rose-filet)}
   .bloc{padding:56px 0}
   .titre-2{font-size:32px}
-  .hero-a{min-height:0;background-image:linear-gradient(180deg,rgba(247,0,89,.2) 0%,rgba(247,0,89,.86) 42%,rgba(247,0,89,.97) 100%),url(../img/photo-hero.jpg);background-position:30% top}
-  .hero-a .conteneur{padding-top:200px;padding-bottom:110px}
+  .hero-a__photo-mobile{display:block;height:260px;background:url(../img/photo-hero.jpg) 62% 40%/cover}
+  .hero-a{min-height:0;background:var(--rose)}
+  .hero-a .conteneur{padding-top:36px;padding-bottom:110px}
   .hero__avant{font-size:22px}
   .hero__titre,.hero-a3 h1{font-size:40px}
   .hero__chapo{font-size:17px}
@@ -286,8 +287,7 @@ body.avec-presentation .entete{top:44px}
   .formulaire{grid-template-columns:1fr;padding:24px;margin-left:0;margin-right:0}
   .formulaire--chevauche{margin-top:-30px}
   .hero-a3{padding:36px 0 44px}
-  .bandeau-photo{min-height:300px;padding-bottom:24px}
-  .bandeau-photo p{font-size:18px;padding:18px 20px}
+  .bandeau-photo{height:260px;background-position:center 6%}
   .hero-a4{padding:40px 0 110px}
   .hero-a4__photo{min-height:240px}
   .groupe-elus h2{font-size:28px}

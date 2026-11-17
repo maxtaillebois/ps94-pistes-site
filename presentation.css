@@ -1,0 +1,12 @@
+/* Barre de présentation des trois pistes : outil de navigation pour la revue, ne fait pas partie du design du site */
+.pres-barre{position:sticky;top:0;z-index:1000;box-sizing:border-box;height:44px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 16px;background:#2b2b2b;color:#f2f2f2;font:500 14px/1.2 system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+.pres-barre a{color:#f2f2f2;text-decoration:none;white-space:nowrap;padding:6px 10px;border-radius:4px}
+.pres-barre a:hover,.pres-barre a:focus-visible{background:#444;outline:none}
+.pres-barre__titre{flex:1 1 auto;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pres-barre__titre strong{font-weight:700}
+.pres-barre__titre span{color:#b9b9b9}
+.pres-barre__pistes{display:flex;gap:4px}
+@media (max-width:700px){
+  .pres-barre{gap:4px;padding:0 6px;font-size:13px}
+  .pres-barre__titre span,.pres-long{display:none}
+}

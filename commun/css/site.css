@@ -1,0 +1,302 @@
+/* Site de la Fédération socialiste du Val-de-Marne - maquettes navigables (pistes A, A3, A4) */
+:root{
+  --rose:#F70059;--rose-bouton:#E00050;--rose-texte:#D6004C;--rose-profond:#C2004A;
+  --rose-pale:#FFF5F8;--rose-pale-2:#FFEEF4;--rose-filet:#F2D5E0;--rose-doux:#FFD9E7;--rose-doux-2:#FFC2D8;
+  --encre:#1A1A1A;--gris:#4A4447;--gris-2:#6B6467;--gris-clair:#EDE7EA;--bordeaux:#2A0012;--pourpre:#8B0A50;
+  --largeur:1280px;--gouttiere:40px;
+  --carte-fond:#FFD9E7;--carte-fond-2:#FFC2D8;--carte-trait:#FFFFFF;--carte-survol:#FF8FB6;--carte-actif:#F70059;
+  --pin-fond:#FFFFFF;--pin-texte:#D6004C;--pin-actif-fond:#1A1A1A;--pin-actif-texte:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--encre);font:400 17px/1.55 "Barlow",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--rose-texte)}
+a:hover{color:#A8003C}
+h1,h2,h3{margin:0}
+.arvo{font-family:"Arvo",Georgia,serif}
+.conteneur{max-width:var(--largeur);margin:0 auto;padding:0 var(--gouttiere)}
+.bloc{padding:96px 0}
+.bloc--pale{background:var(--rose-pale)}
+.bloc--rose{background:var(--rose);color:#fff}
+.surtitre{margin:0 0 10px;color:var(--rose-texte);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:14px}
+.bloc--rose .surtitre{color:var(--bordeaux)}
+.titre-2{font-family:"Arvo",Georgia,serif;font-weight:700;font-size:44px;line-height:1.1;margin-bottom:20px}
+.lien-fleche{font-weight:700}
+.insec{white-space:nowrap}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:800 15px/1 "Barlow",sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:16px 28px;border-radius:4px;border:2px solid transparent;cursor:pointer;min-height:48px}
+.btn--plein{background:var(--rose-bouton);color:#fff}
+.btn--plein:hover{background:var(--rose-profond);color:#fff}
+.btn--blanc{background:#fff;color:var(--rose-profond)}
+.btn--blanc:hover{background:var(--rose-pale-2);color:var(--rose-profond)}
+.btn--contour-blanc{border-color:#fff;color:#fff;background:transparent}
+.btn--contour-blanc:hover{background:rgba(255,255,255,.14);color:#fff}
+.btn--fonce{background:var(--bordeaux);color:#fff}
+.btn--fonce:hover{background:#000;color:#fff}
+.btn--petit{padding:12px 20px;min-height:44px}
+.boutons{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+
+/* En-tête */
+.entete{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--rose-filet)}
+body.avec-presentation .entete{top:44px}
+.entete__in{max-width:var(--largeur);margin:0 auto;padding:14px var(--gouttiere);display:flex;align-items:center;gap:24px}
+.entete__logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
+.entete__logo img{height:50px;width:auto;display:block}
+.entete__logo span{border-left:2px solid var(--rose);padding-left:12px;font-weight:700;color:var(--rose-texte);font-size:15px;line-height:1.15}
+.entete__nav{margin-left:auto}
+.entete__nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px}
+.entete__nav a{color:var(--encre);text-decoration:none;font-weight:600;font-size:16px;padding:6px 0;border-bottom:3px solid transparent}
+.entete__nav a:hover{color:var(--rose-texte)}
+.entete__nav a[aria-current="page"]{color:var(--rose-texte);border-bottom-color:var(--rose)}
+.entete__burger{display:none;margin-left:4px;width:44px;height:44px;border:0;background:transparent;cursor:pointer;align-items:center;justify-content:center}
+.entete__burger svg{width:26px;height:26px}
+
+/* Pied de page */
+.pied{background:#1C1C1C;color:#E8E3E5;padding:64px 0 28px;font-size:16px}
+.pied a{color:#E8E3E5;text-decoration:none}
+.pied a:hover{color:#fff;text-decoration:underline}
+.pied__haut{display:flex;flex-wrap:wrap;gap:48px}
+.pied__marque{flex:2 1 280px}
+.pied__marque img{height:46px;width:auto;display:block}
+.pied__marque p{margin:14px 0 20px}
+.pied__col{flex:1 1 160px;display:flex;flex-direction:column;gap:8px}
+.pied__col strong{color:#fff}
+.pied__bas{margin-top:44px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);display:flex;flex-wrap:wrap;gap:20px;font-size:14px;color:#B9B1B5}
+.pied__bas span{color:inherit}
+
+/* Accueil piste A : photo sous voile rose */
+.hero-a{background-image:linear-gradient(90deg,rgba(247,0,89,.94) 0%,rgba(247,0,89,.82) 38%,rgba(247,0,89,.15) 72%,rgba(247,0,89,0) 100%),url(../img/photo-hero.jpg);background-size:cover;background-position:center 30%;min-height:600px;display:flex;align-items:center;color:#fff}
+.hero-a .conteneur{width:100%;padding-top:80px;padding-bottom:150px}
+.hero__texte{max-width:620px}
+.hero__avant{margin:0 0 6px;font-family:"Arvo",Georgia,serif;font-size:30px}
+.hero__titre{font-family:"Arvo",Georgia,serif;font-weight:700;font-size:64px;line-height:1.05}
+.hero__chapo{margin:24px 0 0;font-size:21px;line-height:1.5;font-weight:500}
+
+/* Carte du 1er fédéral posée à cheval */
+.premier{position:relative;z-index:2;max-width:1120px;margin:-110px auto 0;background:#fff;box-shadow:0 18px 50px rgba(120,0,40,.16);border-radius:6px;display:flex;flex-wrap:wrap;gap:44px;padding:44px}
+.premier--filet{border-top:6px solid var(--rose)}
+.premier__photo{flex:0 0 220px;aspect-ratio:3/4;background:var(--gris-clair);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--gris-2);font-size:14px;text-align:center;padding:12px}
+.premier__texte{flex:1 1 400px;min-width:0}
+.premier__texte h2{font-family:"Arvo",Georgia,serif;font-size:42px;line-height:1.1;margin:8px 0 16px}
+.premier__texte p{margin:0 0 12px}
+.premier__liens{display:flex;flex-wrap:wrap;gap:22px;align-items:center;margin-top:18px}
+.premier__reseaux{color:var(--gris-2);font-size:15px}
+.marge-carte{padding:0 var(--gouttiere)}
+
+/* Chiffres */
+.chiffres{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;text-align:center}
+.chiffre{padding:8px;border-right:1px solid var(--rose-filet)}
+.chiffre:last-child{border-right:0}
+.chiffre b{display:block;font-family:"Arvo",Georgia,serif;font-weight:700;font-size:56px;line-height:1;color:var(--rose-texte)}
+.chiffre span{display:block;margin-top:8px;font-weight:600}
+.chiffres--rose{background:var(--rose);color:#fff;padding:48px 0}
+.chiffres--rose .chiffre{border-right-color:rgba(255,255,255,.3)}
+.chiffres--rose .chiffre b{color:#fff}
+.chiffres--rose .chiffre span{color:var(--bordeaux)}
+
+/* Deux colonnes */
+.duo{display:flex;flex-wrap:wrap;gap:56px;align-items:center}
+.duo--haut{align-items:flex-start}
+.duo>*{min-width:0}
+.duo__petit{flex:1 1 340px}
+.duo__grand{flex:2 1 560px}
+.duo__moitie{flex:1 1 460px}
+
+/* Instances */
+.instances{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.instance{background:#fff;border-top:4px solid var(--rose);padding:26px;border-radius:0 0 4px 4px}
+.instance h3{font-size:21px;font-weight:700;margin-bottom:8px}
+.instance p{margin:0;font-size:16px}
+.bloc--pale .instance{background:#fff}
+
+/* Carte des sections */
+.carte{position:relative}
+.carte__plan{position:relative}
+.carte__plan svg{display:block;width:100%;height:auto}
+.carte__plan g[data-s]{cursor:pointer}
+.carte__plan path{fill:var(--carte-fond);stroke:var(--carte-trait);stroke-width:1.6;stroke-linejoin:round;transition:fill .15s}
+.carte__plan g.pair path{fill:var(--carte-fond-2)}
+.carte__plan g[data-s]:hover path{fill:var(--carte-survol)}
+.carte__plan g.est-actif path,.carte__plan g.est-actif:hover path{fill:var(--carte-actif)}
+.carte__pin{position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;border:0;padding:0;background:var(--pin-fond);color:var(--pin-texte);font:800 11px/24px "Barlow",sans-serif;text-align:center;box-shadow:0 2px 6px rgba(90,0,30,.28);cursor:pointer}
+.carte__pin:hover{transform:translate(-50%,-50%) scale(1.15)}
+.carte__pin.est-actif{background:var(--pin-actif-fond);color:var(--pin-actif-texte);transform:translate(-50%,-50%) scale(1.25)}
+.carte__pin:focus-visible{outline:3px solid var(--encre);outline-offset:2px}
+.recherche label{display:block;font-weight:700;margin-bottom:8px}
+.recherche__champ{display:flex;gap:8px;background:#fff;padding:8px;border-radius:6px;box-shadow:0 10px 30px rgba(120,0,40,.12)}
+.recherche__champ input{flex:1;min-width:0;font:inherit;font-size:18px;padding:10px 12px;border:0;background:transparent}
+.recherche__champ input:focus{outline:2px solid var(--rose);outline-offset:2px;border-radius:3px}
+.recherche__message{min-height:1.5em;margin:10px 0 0;font-weight:600}
+.puces{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;font-size:15px;align-items:center}
+.puces a{background:#fff;border:1px solid #F2C2D3;border-radius:999px;padding:6px 14px;text-decoration:none;color:var(--encre);font-weight:600}
+.puces a:hover{border-color:var(--rose)}
+.fiche{color:var(--encre);background:#fff;border-radius:6px;box-shadow:0 12px 30px rgba(120,0,40,.16);padding:22px 24px;border-top:4px solid var(--rose)}
+.fiche__num{margin:0;color:var(--rose-texte);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:13px}
+.fiche__nom{font-family:"Arvo",Georgia,serif;font-size:28px;line-height:1.15;margin:6px 0 8px}
+.fiche p{margin:0 0 6px;color:var(--encre)}
+.fiche__communes{color:var(--gris)!important;font-size:15px}
+.fiche .btn{margin-top:12px}
+
+/* Liste des sections */
+.liste-sections{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 36px;margin:0;padding:0;list-style:none}
+.liste-sections li{border-bottom:1px solid var(--rose-filet)}
+.liste-sections button{all:unset;box-sizing:border-box;width:100%;display:flex;gap:14px;padding:14px 0;cursor:pointer}
+.liste-sections button:hover .ls-nom,.liste-sections button:focus-visible .ls-nom{color:var(--rose-texte);text-decoration:underline}
+.liste-sections button:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+.ls-num{flex:0 0 32px;font-weight:800;color:var(--rose-texte)}
+.ls-nom{display:block;font-weight:700}
+.ls-sec{display:block;font-size:15px;color:var(--gris)}
+
+/* Élu·e·s */
+.elus{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:22px}
+.elu{background:#fff;border-radius:4px;overflow:hidden}
+.elu__photo{aspect-ratio:3/4;background:var(--gris-clair);display:flex;align-items:center;justify-content:center;color:var(--gris-2);font-size:13px}
+.elu__texte{padding:14px 16px 18px}
+.elu__nom{font-weight:700;font-size:18px;line-height:1.2}
+.elu__mandat{color:var(--rose-texte);font-size:15px;font-weight:600;margin-top:4px}
+.bloc:not(.bloc--pale) .elu{border:1px solid var(--rose-filet)}
+.liste-elus{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.liste-elus li{padding:14px 0;border-bottom:1px solid var(--rose-filet)}
+.liste-elus b{display:block}
+.liste-elus span{color:var(--gris);font-size:15px}
+.villes{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:12px 0 0;padding:0}
+.villes li{background:#fff;border:1px solid var(--rose-filet);border-radius:999px;padding:5px 14px;font-size:15px;font-weight:600}
+.groupe-elus+.groupe-elus{margin-top:72px}
+.groupe-elus h2{font-family:"Arvo",Georgia,serif;font-size:34px;margin-bottom:24px}
+
+/* Appel final */
+.appel{position:relative;overflow:hidden;background:var(--rose);color:#fff;padding:96px 0}
+.appel h2{font-family:"Arvo",Georgia,serif;font-size:50px;line-height:1.1;max-width:820px}
+.filigrane{position:absolute;pointer-events:none;background-repeat:no-repeat;background-size:contain}
+.filigrane--blanc{background-image:url(../img/PS25_POINGROSEBlanc.png);opacity:.14}
+.filigrane--rose{background-image:url(../img/PS25_POINGROSERoseRVB.png);opacity:.07}
+
+/* En-têtes des pages intérieures */
+.page-entete{padding:72px 0 64px}
+.page-entete h1{font-family:"Arvo",Georgia,serif;font-weight:700;font-size:56px;line-height:1.05;margin-bottom:16px}
+.page-entete p{margin:0;max-width:720px;font-size:20px}
+.page-entete--photo{background-image:linear-gradient(90deg,rgba(247,0,89,.95) 0%,rgba(247,0,89,.85) 50%,rgba(247,0,89,.35) 100%),url(../img/photo-groupe.jpg);background-size:cover;background-position:center 35%;color:#fff;padding-bottom:80px}
+.page-entete--photo p{font-weight:500}
+.page-entete--pale{background:var(--rose-pale)}
+.page-entete--rose{background:var(--rose);color:#fff;position:relative;overflow:hidden}
+.page-entete--rose p{color:var(--bordeaux);font-weight:600}
+
+/* Formulaire */
+.formulaire{max-width:860px;margin:0 auto;background:#fff;box-shadow:0 18px 50px rgba(120,0,40,.16);border-radius:6px;padding:48px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px}
+.formulaire--chevauche{position:relative;margin-top:-60px}
+.champ{display:flex;flex-direction:column;gap:6px;min-width:0}
+.champ--large{grid-column:1/-1}
+.champ label{font-weight:700}
+.champ input,.champ select,.champ textarea{width:100%;min-width:0;font:inherit;padding:13px 14px;border:2px solid #E5C9D4;border-radius:4px;background:#fff;color:var(--encre)}
+.champ input:focus,.champ select:focus,.champ textarea:focus{outline:none;border-color:var(--rose)}
+.champ textarea{resize:vertical;min-height:150px}
+.rgpd{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--gris)}
+.rgpd input{width:20px;height:20px;margin-top:3px;accent-color:var(--rose-bouton);flex-shrink:0}
+.formulaire__envoi{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.confirmation{grid-column:1/-1;background:var(--rose-pale-2);border-left:4px solid var(--rose);padding:16px 18px;margin:0;font-weight:600}
+.mention{font-size:14px;color:var(--gris-2)}
+
+/* Accueil piste A3 : la carte d'abord */
+.hero-a3{background:var(--rose-pale);padding:64px 0 72px;position:relative;overflow:hidden}
+.hero-a3 h1{font-family:"Arvo",Georgia,serif;font-weight:700;font-size:56px;line-height:1.06;margin:0 0 18px}
+.hero-a3 .hero__chapo{color:var(--encre);font-size:19px;margin:0 0 28px}
+.bandeau-photo{min-height:440px;display:flex;align-items:flex-end;padding-bottom:48px;background-size:cover;background-position:center 35%}
+.bandeau-photo--groupe{background-image:url(../img/photo-groupe.jpg)}
+.bandeau-photo p{margin:0;max-width:560px;background:#fff;padding:26px 30px;border-left:6px solid var(--rose);font-family:"Arvo",Georgia,serif;font-size:22px;line-height:1.4}
+.depliants{border-top:2px solid var(--encre)}
+.depliants details{border-bottom:1px solid #E8DDE1}
+.depliants summary{list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;cursor:pointer;font-size:20px;font-weight:700}
+.depliants summary::-webkit-details-marker{display:none}
+.depliants summary::after{content:"+";color:var(--rose-texte);font-size:28px;line-height:1;font-weight:400}
+.depliants details[open] summary::after{content:"−"}
+.depliants details p{margin:0 0 20px;color:var(--gris)}
+
+/* Accueil piste A4 : plus rose */
+.hero-a4{background:var(--rose);padding:72px 0 170px;position:relative;overflow:hidden;color:#fff}
+.hero-a4 .hero__chapo{color:var(--bordeaux);font-weight:600;font-size:20px}
+.hero-a4__photo{flex:1 1 460px;min-height:440px;border-radius:6px;box-shadow:0 24px 60px rgba(90,0,30,.35);background:url(../img/photo-hero.jpg) center 30%/cover}
+
+/* ===== Thèmes ===== */
+.piste-a4{--carte-fond:#FFFFFF;--carte-fond-2:#FFE6EF;--carte-trait:#F70059;--carte-survol:#8B0A50;--carte-actif:#8B0A50;--pin-fond:#E00050;--pin-texte:#FFFFFF;--pin-actif-fond:#FFFFFF;--pin-actif-texte:#8B0A50}
+.piste-a4 .pied{background:var(--rose-profond);color:#fff}
+.piste-a4 .pied a{color:#fff}
+.piste-a4 .pied__bas{color:#fff}
+.piste-a4 .chiffre{border-right:2px solid #FFD6E5}
+.piste-a4 .chiffre:last-child{border-right:0}
+.piste-a4 .chiffre b{color:var(--rose-bouton)}
+.piste-a4 .elu{background:var(--rose-bouton);border:0!important}
+.piste-a4 .elu__nom,.piste-a4 .elu__mandat{color:#fff}
+.piste-a4 .elu__mandat{font-weight:500}
+.piste-a4 .bloc--rose .recherche label{color:var(--bordeaux)}
+.piste-a4 .bloc--rose .recherche__message{color:var(--bordeaux)}
+.piste-a4 .bloc--rose .puces a{border-color:#fff;color:var(--rose-profond)}
+.piste-a4 .fiche{border-top-color:var(--pourpre)}
+.piste-a4 .fiche__num{color:var(--pourpre)}
+.piste-a4 .bloc--rose .titre-2{color:#fff}
+.piste-a4 .bloc--rose .chapo-rose{color:var(--bordeaux);font-weight:500;font-size:19px}
+
+/* ===== Écrans moyens et petits ===== */
+@media (max-width:1100px){
+  .entete__nav ul{gap:18px}
+  .chiffres{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .chiffre{border-right:0}
+  .liste-sections{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:960px){
+  :root{--gouttiere:20px}
+  .entete__in{flex-wrap:wrap;gap:12px;padding-top:10px;padding-bottom:10px}
+  .entete__logo img{height:40px}
+  .entete__logo span{font-size:12px;padding-left:8px}
+  .entete__burger{display:inline-flex;order:3}
+  .entete__adherer{order:2;margin-left:auto}
+  .entete__nav{order:4;flex-basis:100%;display:none;margin:0}
+  .entete__nav.est-ouvert{display:block}
+  .entete__nav ul{flex-direction:column;gap:0;padding:8px 0}
+  .entete__nav a{display:block;padding:12px 0;border-bottom:1px solid var(--rose-filet);font-size:18px}
+  .entete__nav a[aria-current="page"]{border-bottom-color:var(--rose-filet)}
+  .bloc{padding:56px 0}
+  .titre-2{font-size:32px}
+  .hero-a{min-height:0;background-image:linear-gradient(180deg,rgba(247,0,89,.2) 0%,rgba(247,0,89,.86) 42%,rgba(247,0,89,.97) 100%),url(../img/photo-hero.jpg);background-position:30% top}
+  .hero-a .conteneur{padding-top:200px;padding-bottom:110px}
+  .hero__avant{font-size:22px}
+  .hero__titre,.hero-a3 h1{font-size:40px}
+  .hero__chapo{font-size:17px}
+  .premier{margin:-70px 0 0;padding:24px;gap:20px}
+  .premier__photo{flex:0 0 96px;font-size:12px}
+  .duo>.premier__photo{flex:0 0 auto!important;width:170px;font-size:12px}
+  .premier__texte{flex-basis:200px}
+  .premier__texte h2{font-size:28px}
+  .chiffres{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}
+  .chiffre b{font-size:42px}
+  .instances{grid-template-columns:1fr}
+  .carte__pin{display:none}
+  .liste-sections{grid-template-columns:1fr}
+  .liste-elus{grid-template-columns:1fr}
+  .elus{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .elu__nom{font-size:16px}
+  .appel{padding:56px 0}
+  .appel h2{font-size:30px}
+  .page-entete{padding:44px 0 40px}
+  .page-entete h1{font-size:36px}
+  .page-entete p{font-size:17px}
+  .formulaire{grid-template-columns:1fr;padding:24px;margin-left:0;margin-right:0}
+  .formulaire--chevauche{margin-top:-30px}
+  .hero-a3{padding:36px 0 44px}
+  .bandeau-photo{min-height:300px;padding-bottom:24px}
+  .bandeau-photo p{font-size:18px;padding:18px 20px}
+  .hero-a4{padding:40px 0 110px}
+  .hero-a4__photo{min-height:240px}
+  .groupe-elus h2{font-size:28px}
+  .boutons .btn{flex:1 1 100%}
+}
+@media (max-width:480px){
+  .entete__in{gap:8px}
+  .entete__logo{gap:8px}
+  .entete__logo img{height:34px}
+  .entete__logo span{font-size:11px;padding-left:7px}
+  .entete__adherer{padding:10px 12px;font-size:13px;letter-spacing:.04em}
+  .entete__burger{margin-left:0}
+}

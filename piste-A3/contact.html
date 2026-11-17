@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact - Fédération socialiste du Val-de-Marne</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&amp;family=Barlow:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="../commun/css/site.css">
+<link rel="stylesheet" href="../presentation.css">
+</head>
+<body class="avec-presentation piste-a3">
+<nav class="pres-barre" aria-label="Présentation des trois pistes">
+  <a href="../index.html">← <span class="pres-long">Revenir aux </span>trois pistes</a>
+  <span class="pres-barre__titre"><strong>Piste A3</strong><span>, la carte d&#x27;abord</span></span>
+  <span class="pres-barre__pistes"><a href="../piste-A/contact.html" title="La même page dans la piste a">← <span class="pres-long">Piste </span>A</a><a href="../piste-A4/contact.html" title="La même page dans la piste a4"><span class="pres-long">Piste </span>A4 →</a></span>
+</nav>
+<header class="entete">
+  <div class="entete__in">
+    <a class="entete__logo" href="index.html"><img src="../commun/img/PS25_LOGOSRose.png" alt="Le Parti socialiste"><span>Fédération du<br>Val-de-Marne</span></a>
+    <nav class="entete__nav" data-menu aria-label="Menu principal"><ul><li><a href="index.html">Accueil</a></li><li><a href="federation.html">La Fédération</a></li><li><a href="sections.html">Les sections</a></li><li><a href="elus.html">Les élu·e·s</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul></nav>
+    <a class="btn btn--plein btn--petit entete__adherer" href="https://adhesion.parti-socialiste.fr/">Adhérer</a>
+    <button class="entete__burger" type="button" data-menu-bouton aria-expanded="false" aria-label="Ouvrir le menu"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+<main>
+<section class="page-entete page-entete--pale"><div class="conteneur"><p class="surtitre">Fédération socialiste du <span class="insec">Val-de-Marne</span></p><h1>Nous écrire</h1><p>Une question, une envie de nous rejoindre, une section ou un·e élu·e à joindre : tout passe par ce formulaire, nous transmettons.</p></div></section>
+<section style="padding:0 var(--gouttiere) 96px">
+  <form class="formulaire formulaire--chevauche" data-contact-form novalidate>
+    <div class="champ"><label for="nom">Nom *</label><input id="nom" name="nom" type="text" autocomplete="family-name" required></div>
+    <div class="champ"><label for="prenom">Prénom *</label><input id="prenom" name="prenom" type="text" autocomplete="given-name" required></div>
+    <div class="champ"><label for="ville">Ville *</label><input id="ville" name="ville" type="text" autocomplete="address-level2" required></div>
+    <div class="champ"><label for="mail">E-mail *</label><input id="mail" name="mail" type="email" autocomplete="email" required></div>
+    <div class="champ"><label for="objet">Objet *</label>
+      <select id="objet" name="objet" required>
+        <option value="rejoindre">Nous rejoindre</option>
+        <option value="section">Contacter une section</option>
+        <option value="elu">Contacter un·e élu·e</option>
+        <option value="presse">Relations presse</option>
+      </select></div>
+    <div class="champ" data-bloc-section><label for="section">Quelle section ? *</label><select id="section" name="section"><option value="1">Alfortville</option><option value="2">Boissy-Saint-Léger - Plateau briard</option><option value="3">Bonneuil-sur-Marne</option><option value="4">Cachan - Arcueil</option><option value="5">Champigny-sur-Marne</option><option value="6">Charenton-le-Pont - Saint-Maurice - Joinville-le-Pont</option><option value="7">Chennevières-sur-Marne</option><option value="8">Chevilly-Larue - L&#x27;Haÿ-les-Roses - Rungis</option><option value="9">Choisy-le-Roi</option><option value="10">Créteil</option><option value="11">Fontenay-sous-Bois</option><option value="12">Fresnes</option><option value="13">Gentilly</option><option value="14">Ivry-sur-Seine</option><option value="15">Le Kremlin-Bicêtre</option><option value="16">Le Perreux-sur-Marne - Bry-sur-Marne</option><option value="17">Limeil-Brévannes</option><option value="18">Maisons-Alfort</option><option value="19">Nogent-sur-Marne</option><option value="20">Noiseau - Ormesson-sur-Marne - Sucy-en-Brie</option><option value="21">Orly</option><option value="22">Portes de Brie</option><option value="23">Saint-Mandé</option><option value="24">Saint-Maur-des-Fossés</option><option value="25">Thiais</option><option value="26">Valenton</option><option value="27">Villejuif</option><option value="28">Villeneuve-le-Roi - Ablon-sur-Seine</option><option value="29">Villeneuve-Saint-Georges</option><option value="30">Vincennes</option><option value="31">Vitry-sur-Seine</option></select></div>
+    <div class="champ champ--large"><label for="message">Message *</label><textarea id="message" name="message" required></textarea></div>
+    <div class="rgpd"><input id="rgpd" type="checkbox" required><label for="rgpd">J'accepte que mes données soient utilisées par la Fédération socialiste du Val-de-Marne pour répondre à mon message. Elles ne sont ni cédées ni utilisées à d'autres fins.</label></div>
+    <div class="formulaire__envoi"><button class="btn btn--plein" type="submit">Envoyer le message</button><span class="mention">* champs obligatoires</span></div>
+    <p class="confirmation" data-confirmation hidden tabindex="-1">Maquette : le message n'est pas envoyé. Sur le vrai site, il partira vers la Fédération, qui le transmettra.</p>
+  </form>
+</section>
+</main>
+<footer class="pied">
+  <div class="conteneur">
+    <div class="pied__haut">
+      <div class="pied__marque"><img src="../commun/img/PS25_LOGOSBlanc.png" alt="Le Parti socialiste"><p>Fédération socialiste du <span class="insec">Val-de-Marne</span></p><a class="btn btn--plein btn--petit" href="https://adhesion.parti-socialiste.fr/">Adhérer</a></div>
+      <div class="pied__col"><strong>Le site</strong><a href="federation.html">La Fédération</a><a href="sections.html">Les sections</a><a href="elus.html">Les élu·e·s</a><a href="contact.html">Contact</a></div>
+      <div class="pied__col"><strong>Le Parti socialiste</strong><a href="https://www.parti-socialiste.fr/">Site national</a><a href="https://adhesion.parti-socialiste.fr/">Adhérer en ligne</a><a href="federation.html#js">Jeunes Socialistes</a></div>
+      <div class="pied__col"><strong>Suivre la Fédération</strong><span>Réseaux sociaux à venir</span></div>
+    </div>
+    <div class="pied__bas"><span>© 2026 Fédération socialiste du Val-de-Marne</span><span>Mentions légales</span><span>Confidentialité</span><span>Gestion des cookies</span></div>
+  </div>
+</footer>
+<script src="../commun/js/sections.js"></script>
+<script src="../commun/js/site.js"></script>
+</body>
+</html>

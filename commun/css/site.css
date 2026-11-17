@@ -77,7 +77,7 @@ body.avec-presentation .entete{top:44px}
 
 /* Carte du 1er fédéral posée à cheval */
 .premier{position:relative;z-index:2;max-width:1120px;margin:-110px auto 0;background:#fff;box-shadow:0 18px 50px rgba(120,0,40,.16);border-radius:6px;display:flex;flex-wrap:wrap;gap:44px;padding:44px}
-.premier--filet{border-top:6px solid var(--rose)}
+.premier--filet{border:2px solid var(--rose)}
 .premier__photo{flex:0 0 220px;aspect-ratio:3/4;background:var(--gris-clair);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--gris-2);font-size:14px;text-align:center;padding:12px}
 .premier__texte{flex:1 1 400px;min-width:0}
 .premier__texte h2{font-family:"Arvo",Georgia,serif;font-size:42px;line-height:1.1;margin:8px 0 16px}
@@ -107,7 +107,7 @@ body.avec-presentation .entete{top:44px}
 
 /* Instances */
 .instances{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.instance{background:#fff;border-top:4px solid var(--rose);padding:26px;border-radius:0 0 4px 4px}
+.instance{background:#fff;border:2px solid var(--rose);padding:26px;border-radius:6px}
 .instance h3{font-size:21px;font-weight:700;margin-bottom:8px}
 .instance p{margin:0;font-size:16px}
 .bloc--pale .instance{background:#fff}
@@ -133,7 +133,7 @@ body.avec-presentation .entete{top:44px}
 .puces{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;font-size:15px;align-items:center}
 .puces a{background:#fff;border:1px solid #F2C2D3;border-radius:999px;padding:6px 14px;text-decoration:none;color:var(--encre);font-weight:600}
 .puces a:hover{border-color:var(--rose)}
-.fiche{color:var(--encre);background:#fff;border-radius:6px;box-shadow:0 12px 30px rgba(120,0,40,.16);padding:22px 24px;border-top:4px solid var(--rose)}
+.fiche{color:var(--encre);background:#fff;border-radius:6px;box-shadow:0 12px 30px rgba(120,0,40,.16);padding:22px 24px;border:2px solid var(--rose)}
 .fiche__num{margin:0;color:var(--rose-texte);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:13px}
 .fiche__nom{font-family:"Arvo",Georgia,serif;font-size:28px;line-height:1.15;margin:6px 0 8px}
 .fiche p{margin:0 0 6px;color:var(--encre)}
@@ -197,7 +197,7 @@ body.avec-presentation .entete{top:44px}
 .rgpd{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--gris)}
 .rgpd input{width:20px;height:20px;margin-top:3px;accent-color:var(--rose-bouton);flex-shrink:0}
 .formulaire__envoi{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
-.confirmation{grid-column:1/-1;background:var(--rose-pale-2);border-left:4px solid var(--rose);padding:16px 18px;margin:0;font-weight:600}
+.confirmation{grid-column:1/-1;background:var(--rose-pale-2);border:2px solid var(--rose);border-radius:6px;padding:16px 18px;margin:0;font-weight:600}
 .mention{font-size:14px;color:var(--gris-2)}
 
 /* Accueil piste A3 : la carte d'abord */
@@ -206,7 +206,7 @@ body.avec-presentation .entete{top:44px}
 .hero-a3 .hero__chapo{color:var(--encre);font-size:19px;margin:0 0 28px}
 .bandeau-photo{min-height:440px;display:flex;align-items:flex-end;padding-bottom:48px;background-size:cover;background-position:center 35%}
 .bandeau-photo--groupe{background-image:url(../img/photo-groupe.jpg)}
-.bandeau-photo p{margin:0;max-width:560px;background:#fff;padding:26px 30px;border-left:6px solid var(--rose);font-family:"Arvo",Georgia,serif;font-size:22px;line-height:1.4}
+.bandeau-photo p{margin:0;max-width:560px;background:#fff;padding:26px 30px;border:2px solid var(--rose);border-radius:6px;font-family:"Arvo",Georgia,serif;font-size:22px;line-height:1.4}
 .depliants{border-top:2px solid var(--encre)}
 .depliants details{border-bottom:1px solid #E8DDE1}
 .depliants summary{list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;cursor:pointer;font-size:20px;font-weight:700}
@@ -234,7 +234,7 @@ body.avec-presentation .entete{top:44px}
 .piste-a4 .bloc--rose .recherche label{color:var(--bordeaux)}
 .piste-a4 .bloc--rose .recherche__message{color:var(--bordeaux)}
 .piste-a4 .bloc--rose .puces a{border-color:#fff;color:var(--rose-profond)}
-.piste-a4 .fiche{border-top-color:var(--pourpre)}
+.piste-a4 .fiche{border-color:var(--pourpre)}
 .piste-a4 .fiche__num{color:var(--pourpre)}
 .piste-a4 .bloc--rose .titre-2{color:#fff}
 .piste-a4 .bloc--rose .chapo-rose{color:var(--bordeaux);font-weight:500;font-size:19px}
